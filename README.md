@@ -1,1 +1,0 @@
-# BSC-IT-STUDY-HUB

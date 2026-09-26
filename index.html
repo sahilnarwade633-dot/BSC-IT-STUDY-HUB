@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSc IT Study Hub</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#172033;
+}
+
+header{
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:white;
+  padding:25px 18px;
+  text-align:center;
+}
+
+header h1{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+header p{
+  opacity:.9;
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:12px;
+  background:white;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 2px 8px #0001;
+}
+
+nav button{
+  border:0;
+  background:#eef2ff;
+  color:#3730a3;
+  padding:10px 15px;
+  border-radius:20px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+.hero{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 4px 15px #0000000d;
+}
+
+.hero h2{
+  margin-bottom:10px;
+}
+
+.subjects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 4px 15px #0000000d;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+ul{
+  padding-left:20px;
+  line-height:2;
+}
+
+.topic{
+  background:#eef2ff;
+  padding:15px;
+  border-radius:12px;
+  margin:10px 0;
+}
+
+.quiz{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  margin-top:15px;
+}
+
+.option{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:12px;
+  margin:8px 0;
+  border:1px solid #ddd;
+  border-radius:10px;
+  background:#fff;
+  cursor:pointer;
+}
+
+.option:hover{
+  background:#f1f5ff;
+}
+
+#result{
+  margin-top:15px;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  margin-top:30px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 BSc IT Study Hub</h1>
+  <p>Learn • Practice • Improve</p>
+</header>
+
+<nav>
+  <button onclick="showSection('home')">🏠 Home</button>
+  <button onclick="showSection('subjects')">📚 Subjects</button>
+  <button onclick="showSection('syllabus')">📋 Syllabus</button>
+  <button onclick="showSection('notes')">📖 Notes</button>
+  <button onclick="showSection('quiz')">🧠 Quiz</button>
+  <button onclick="showSection('ai')">🤖 AI Help</button>
+</nav>
+
+<div class="container">
+
+<section id="home" class="section active">
+
+  <div class="hero">
+    <h2>Welcome to BSc IT Study Hub 👋</h2>
+    <p>
+      Your simple study platform for BSc IT subjects,
+      notes, syllabus and practice quizzes.
+    </p>
+  </div>
+
+  <div class="subjects">
+
+    <div class="card" onclick="showSection('subjects')">
+      <div class="icon">💻</div>
+      <h3>Operating System</h3>
+      <p>Learn OS concepts and fundamentals.</p>
+    </div>
+
+    <div class="card" onclick="showSection('subjects')">
+      <div class="icon">🖥️</div>
+      <h3>Computer Fundamental</h3>
+      <p>Computer basics and important concepts.</p>
+    </div>
+
+    <div class="card" onclick="showSection('subjects')">
+      <div class="icon">👨‍💻</div>
+      <h3>C Programming–1</h3>
+      <p>Learn C programming from basics.</p>
+    </div>
+
+    <div class="card" onclick="showSection('subjects')">
+      <div class="icon">📐</div>
+      <h3>Mathematical Foundation</h3>
+      <p>Important mathematical concepts for BSc IT.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="subjects" class="section">
+
+  <h2>📚 Subjects</h2>
+
+  <div class="subjects">
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Operating System</h3>
+      <p>Processes, memory, files, scheduling and more.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🖥️</div>
+      <h3>Computer Fundamental</h3>
+      <p>Hardware, software, memory, networking basics.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">👨‍💻</div>
+      <h3>C Programming–1</h3>
+      <p>Variables, operators, loops, arrays, functions.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📐</div>
+      <h3>Mathematical Foundation</h3>
+      <p>Matrices, combinations, relations and more.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="syllabus" class="section">
+
+  <h2>📋 Full Syllabus</h2>
+
+  <div class="topic">
+    <h3>💻 Operating System</h3>
+    <ul>
+      <li>Introduction to Operating System</li>
+      <li>Process Management</li>
+      <li>CPU Scheduling</li>
+      <li>Memory Management</li>
+      <li>File Management</li>
+      <li>Deadlocks</li>
+    </ul>
+  </div>
+
+  <div class="topic">
+    <h3>🖥️ Computer Fundamental</h3>
+    <ul>
+      <li>Introduction to Computer</li>
+      <li>Computer Hardware</li>
+      <li>Software</li>
+      <li>Memory</li>
+      <li>Input and Output Devices</li>
+      <li>Computer Networks Basics</li>
+    </ul>
+  </div>
+
+  <div class="topic">
+    <h3>👨‍💻 C Programming–1</h3>
+    <ul>
+      <li>Introduction to C</li>
+      <li>Variables and Data Types</li>
+      <li>Operators</li>
+      <li>Decision Statements</li>
+      <li>Loops</li>
+      <li>Arrays</li>
+      <li>Functions</li>
+    </ul>
+  </div>
+
+  <div class="topic">
+    <h3>📐 Mathematical Foundation</h3>
+    <ul>
+      <li>Matrices</li>
+      <li>Combinations and Permutations</li>
+      <li>Relations</li>
+      <li>Functions</li>
+      <li>Mathematical Induction</li>
+      <li>Pigeonhole Principle</li>
+    </ul>
+  </div>
+
+</section>
+
+<section id="notes" class="section">
+
+  <h2>📖 Notes</h2>
+
+  <div class="topic">
+    <h3>Operating System</h3>
+    <p>
+      An Operating System is system software that manages
+      computer hardware and provides services to application programs.
+    </p>
+  </div>
+
+  <div class="topic">
+    <h3>C Programming</h3>
+    <p>
+      C is a general-purpose programming language used
+      for developing system and application software.
+    </p>
+  </div>
+
+  <div class="topic">
+    <h3>Computer Fundamental</h3>
+    <p>
+      A computer is an electronic device that accepts data,
+      processes it and produces meaningful information.
+    </p>
+  </div>
+
+</section>
+
+<section id="quiz" class="section">
+
+  <h2>🧠 Practice Quiz</h2>
+
+  <div class="quiz">
+
+    <h3>Q1. Which of these is an Operating System?</h3>
+
+    <button class="option" onclick="answer(false)">A. HTML</button>
+    <button class="option" onclick="answer(true)">B. Windows</button>
+    <button class="option" onclick="answer(false)">C. CSS</button>
+    <button class="option" onclick="answer(false)">D. SQL</button>
+
+    <p id="result"></p>
+
+  </div>
+
+</section>
+
+<section id="ai" class="section">
+
+  <div class="hero">
+    <h2>🤖 AI Study Help</h2>
+
+    <p>
+      पुढच्या version मध्ये इथे AI Study Assistant जोडू,
+      जिथे तू subject related प्रश्न विचारू शकशील.
+    </p>
+
+    <br>
+
+    <p>
+      Example: "Explain CPU scheduling in simple language."
+    </p>
+  </div>
+
+</section>
+
+</div>
+
+<footer>
+  © 2026 BSc IT Study Hub
+</footer>
+
+<script>
+
+function showSection(id){
+
+  document.querySelectorAll(".section")
+  .forEach(section => {
+    section.classList.remove("active");
+  });
+
+  document.getElementById(id)
+  .classList.add("active");
+
+  window.scrollTo(0,0);
+}
+
+function answer(correct){
+
+  const result=document.getElementById("result");
+
+  if(correct){
+    result.innerHTML="✅ Correct answer!";
+  }else{
+    result.innerHTML="❌ Try again!";
+  }
+
+}
+
+</script>
+
+</body>
+  </html>
